@@ -8,7 +8,6 @@ body {
     width: 90%;
     color: #FFFFFF;
     margin: 0 auto;
-    background-color: #FFFFFF;
 }
 
 h1 {
@@ -53,10 +52,8 @@ footer p {
     text-align: left;
 }
 
-
 /***NAVIGATION***/
 
-/* nav header contained within the width of the body, height specified below*/
 .header1 {
     background-color: #020873;
     height: 70px;
@@ -68,14 +65,12 @@ nav li, a{
     text-decoration: none;
     font-size: 1em;
     list-style-type: none;
-
 }
 
 /* Hint: On hover, background-color changes to #590242 */
 li a:hover {
     background: #590242;
 }
-
 
 /* Styles MuzakMaker list item */
 #TopNavItem {
@@ -148,21 +143,16 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     top: 0;
 }
 
-
 /***LAYOUT***/
 
-
 /* playlist grid has 5 rows / each row will contain an item that holds img/txt */
-/* this grid is a containing element, and the elements of the grid are the children */
      .playlists { 
-        display: grid; /* sets our container as a grid */
+        display: grid; 
         grid-template-columns: repeat(5, 200px); /*sets columns 200px high*/
         background-color: #2699FB;
         overflow-x: auto;
         overflow-y: hidden;
         gap: 10px;
-
-        
     }
 
 
@@ -176,14 +166,13 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     }
 
 
-    .playlists .item { /* items are child elements of the playlist and curated grids */
+    .playlists .item { 
         background-color: #028DFB; 
         display: grid;
         width: 200px;
         height: 260px;
         position: relative;
-        left: 10px;
-        
+        left: 10px;  
     }
 
     .curated .item {
@@ -192,22 +181,19 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         width: 200px;
         height: 260px;
         position: relative;
-        left: 10px;
-        
-        
+        left: 10px;  
     }
+
      .item img {
         position: relative;
         left: 13%;
+        top: 5%;
     }
 
     .item h3, p {
         color:#FFFFFF;
         text-align: center;
     }
-
-
-
 
 /***TRENDING IMAGES/TEXT***/
 
@@ -231,7 +217,6 @@ dd {  /* artist name */
     color:#590242;
 }
 
-
 /***BUTTONS***/
 
 .more { 
@@ -249,7 +234,6 @@ dd {  /* artist name */
 .more:hover {
     background-color: #020659;
 }
-
 
 /***AUDIO***/
 
@@ -273,7 +257,6 @@ audio::-webkit-media-controls-play-button {
 audio::-webkit-media-controls-enclosure {
     background-color: rgba(255,255,255,.5);
 }
-
 
 /***SCROLL***/
 
@@ -334,10 +317,14 @@ audio::-webkit-media-controls-enclosure {
     background: #FFFFFF;
 }
 
-
 /***MEDIA QUERY***/
+
 /* when viewport >= 834px, display css */
 @media screen and (min-width:834px) {
+    body {
+        width: 834px;
+    }
+
     ul {
         overflow: visible;
         position: absolute;
@@ -345,7 +332,6 @@ audio::-webkit-media-controls-enclosure {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         column-gap: 10%;
-        width: 80%;
     }
 
     #TopNavItem {
@@ -365,19 +351,18 @@ audio::-webkit-media-controls-enclosure {
         grid-template-columns: 1fr 1fr;
     }
 
-     .playlists { /* grid within grid container */
+     .playlists { 
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, 100px);       
         overflow-x: hidden;
         overflow-y: auto;
-        
     }
 
     .playlists .item { 
         left: 20px;
-        width: fit-content;
-        height: fit-content;
+        width: 400px;
+        height: 200px;
     }
 
     .curated { 
@@ -390,23 +375,33 @@ audio::-webkit-media-controls-enclosure {
 
     .curated .item {
         left: 20px;
-        width: fit-content;
-        height: fit-content;
+        width: 400px;
+        height: 200px;
     }
 
 
-     .item img {
-
-     }
-    
-
-    .item h3, p {
-        
+    .item img {
+        position: relative;
+        left: 13%;
     }
 
+    .item h3 {
+        width: 100px;
+        position: relative;
+        left: 250px;
+        bottom: 100px;
+    }
+
+    .item p {
+        width: 200px;
+        position: relative;
+        left: 50%;
+        bottom: 40%;
+    }
 
     /* moves buttons responsively */
     .more {
         position: sticky;
-        left: 80%;
+        left: 70%;
     } 
+}
