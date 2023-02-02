@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-size: 1.25em;
     line-height: 2em;
 }
@@ -20,25 +20,30 @@ h2 {
     padding: 10px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: bold;
     text-transform: uppercase;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-size: 20px;
-    color:#590242;
+    color: #590242;
     line-height: 1em;
 }
 
 
-p, dl, dd {
-    color:#FFFFFF;
+p,
+dl,
+dd {
+    color: #FFFFFF;
     font-size: 1em;
 }
 
 footer p {
-    color:#590242;
+    color: #590242;
     font-size: .75em;
 }
 
@@ -60,7 +65,8 @@ footer p {
 }
 
 /* nav includes the menu button, li a targets list items with a link  */
-nav li, a{
+nav li,
+a {
     color: #FFFFFF;
     text-decoration: none;
     font-size: 1em;
@@ -94,6 +100,7 @@ ul {
     max-height: 0;
     transition: max-height .2s ease-out;
 }
+
 label {
     cursor: pointer;
     display: inline-block;
@@ -101,6 +108,7 @@ label {
     position: relative;
     user-select: none;
 }
+
 label span {
     background-color: #ffffff;
     display: block;
@@ -109,7 +117,9 @@ label span {
     transition: background-color .2s ease-out;
     width: 18px;
 }
-label span:before, label span:after {
+
+label span:before,
+label span:after {
     background: #ffffff;
     content: '';
     display: block;
@@ -118,108 +128,124 @@ label span:before, label span:after {
     transition: all .2s ease-out;
     width: 100%;
 }
+
 label span:before {
     top: 5px;
 }
+
 label span:after {
     top: -5px;
 }
+
 input {
     display: none;
 }
-input:checked ~ ul {
+
+input:checked~ul {
     max-height: 500px;
 }
-input:checked ~ label span {
+
+input:checked~label span {
     background: transparent;
 }
-input:checked ~ label span:before {
+
+input:checked~label span:before {
     transform: rotate(-45deg);
 }
-input:checked ~ label span:after {
+
+input:checked~label span:after {
     transform: rotate(45deg);
 }
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+
+input:checked~label:not(.steps) span:before,
+input:checked~label:not(.steps) span:after {
     top: 0;
 }
 
 /***LAYOUT***/
 
 /* playlist grid has 5 rows / each row will contain an item that holds img/txt */
-     .playlists { 
-        display: grid; 
-        grid-template-columns: repeat(5, 200px); /*sets columns 200px high*/
-        background-color: #2699FB;
-        overflow-x: auto;
-        overflow-y: hidden;
-        gap: 10px;
-    }
+.playlists {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    /*sets columns 200px high*/
+    background-color: #2699FB;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+}
 
 
-    .curated { /*seperate grid from playlist*/
-        display: grid;
-        background-color: #030A8C;
-        grid-template-columns: repeat(5, 200px);
-        overflow-x: auto;
-        overflow-y: hidden;
-        gap: 10px;
-    }
+.curated {
+    /*seperate grid from playlist*/
+    display: grid;
+    background-color: #030A8C;
+    grid-template-columns: repeat(5, 200px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+}
 
 
-    .playlists .item { 
-        background-color: #028DFB; 
-        display: grid;
-        width: 200px;
-        height: 260px;
-        position: relative;
-        left: 10px;  
-    }
+.playlists .item {
+    background-color: #028DFB;
+    display: grid;
+    width: 200px;
+    height: 260px;
+    position: relative;
+    left: 10px;
+}
 
-    .curated .item {
-        background-color: #020873; 
-        display: grid;
-        width: 200px;
-        height: 260px;
-        position: relative;
-        left: 10px;  
-    }
+.curated .item {
+    background-color: #020873;
+    display: grid;
+    width: 200px;
+    height: 260px;
+    position: relative;
+    left: 10px;
+}
 
-     .item img {
-        position: relative;
-        left: 13%;
-        top: 5%;
-    }
+.item img {
+    position: relative;
+    left: 13%;
+    top: 5%;
+}
 
-    .item h3, p {
-        color:#FFFFFF;
-        text-align: center;
-    }
+.item h3,
+p {
+    color: #FFFFFF;
+    text-align: center;
+}
 
 /***TRENDING IMAGES/TEXT***/
 
-.title h3 {    /* song title */
+.title h3 {
+    /* song title */
     margin: 0;
 }
 
-dl {   /* contains artist and name */
+dl {
+    /* contains artist and name */
     display: flex;
     margin: 0;
 }
 
-dt {    /* "artist" */
+dt {
+    /* "artist" */
     margin: 0;
     font-style: italic;
-    color:#590242;
+    color: #590242;
 }
 
-dd {  /* artist name */
+dd {
+    /* artist name */
     margin-left: 10px;
-    color:#590242;
+    color: #590242;
 }
 
 /***BUTTONS***/
 
-.more { 
+.more {
     text-decoration: none;
     background-color: #590242;
     color: #FFFFFF;
@@ -255,27 +281,36 @@ audio::-webkit-media-controls-play-button {
 }
 
 audio::-webkit-media-controls-enclosure {
-    background-color: rgba(255,255,255,.5);
+    background-color: rgba(255, 255, 255, .5);
 }
 
 /***SCROLL***/
 
-.scroll {  /* scroll class contain severything except heading and button / scroll class a grid that has 5 columns and no rows */
-    display: grid; 
-    grid-template-columns: repeat(5, 1fr); /* creates a section for each song, evenly spaced */
-    overflow-x: auto; /*height is auto to display full height */
-    overflow-y: hidden; /*hides song sections that don't fit in grid container */
+.scroll {
+    /* scroll class contain severything except heading and button / scroll class a grid that has 5 columns and no rows */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* creates a section for each song, evenly spaced */
+    overflow-x: auto;
+    /*height is auto to display full height */
+    overflow-y: hidden;
+    /*hides song sections that don't fit in grid container */
 }
 
 .scroll section {
-    margin: 10px; /* white space between each song section */
-    position: relative; /* keeps container in place */
+    margin: 10px;
+    /* white space between each song section */
+    position: relative;
+    /* keeps container in place */
 }
 
-.scroll div{
-    position: absolute; /* holds all scroll items */
-    top: 251px; /* from the top, pushes down container 251px */
-    background-color: rgba(255,255,255,.75);    /*semi-transparent background shown on label of song*/
+.scroll div {
+    position: absolute;
+    /* holds all scroll items */
+    top: 251px;
+    /* from the top, pushes down container 251px */
+    background-color: rgba(255, 255, 255, .75);
+    /*semi-transparent background shown on label of song*/
     padding: 5px;
     height: 50px;
     width: 350px;
@@ -287,33 +322,39 @@ audio::-webkit-media-controls-enclosure {
     width: 15px;
 }
 
-#trending ::-webkit-scrollbar-track { /* scroll bar track is the bar behind the slider*/
+#trending ::-webkit-scrollbar-track {
+    /* scroll bar track is the bar behind the slider*/
     box-shadow: inset 0 0 15px #590242;
 }
 
-#trending ::-webkit-scrollbar-thumb { /* thumb = slider */
+#trending ::-webkit-scrollbar-thumb {
+    /* thumb = slider */
     background: #590242;
     border-radius: 5px;
 }
 
-#trending ::-webkit-scrollbar-thumb:hover {  /* slider turns blue on hover */
+#trending ::-webkit-scrollbar-thumb:hover {
+    /* slider turns blue on hover */
     background: #020659;
 }
 
-#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+#playlists ::-webkit-scrollbar,
+#curated ::-webkit-scrollbar {
     width: 15px;
 }
 
-#playlists ::-webkit-scrollbar-track  {
+#playlists ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 15px #020659;
 }
 
-#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+#playlists ::-webkit-scrollbar-thumb,
+#curated ::-webkit-scrollbar-thumb {
     background: #020659;
     border-radius: 5px;
 }
 
-#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+#playlists ::-webkit-scrollbar-thumb:hover,
+#curated ::-webkit-scrollbar-thumb:hover {
     background: #FFFFFF;
 }
 
@@ -339,33 +380,34 @@ audio::-webkit-media-controls-enclosure {
         left: 0;
         top: 0;
     }
-      
-    label span, input {
+
+    label span,
+    input {
         display: none;
     }
 
 
     /* create 2 column container for playlists and curated sections */
-    .gridplaylistscurated {  
+    .gridplaylistscurated {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-     .playlists { 
+    .playlists {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 100px);       
+        grid-template-rows: repeat(5, 100px);
         overflow-x: hidden;
         overflow-y: auto;
     }
 
-    .playlists .item { 
+    .playlists .item {
         left: 20px;
         width: 400px;
         height: 200px;
     }
 
-    .curated { 
+    .curated {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, 100px);
@@ -403,5 +445,5 @@ audio::-webkit-media-controls-enclosure {
     .more {
         position: sticky;
         left: 70%;
-    } 
+    }
 }
