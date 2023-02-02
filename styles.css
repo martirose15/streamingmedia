@@ -1,8 +1,412 @@
-.mainMenu {
-    float: left;
+/***TEXT/BACKGROUND STYLING***/
+html {
+    background-color: #020659;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 90%;
+    color: #FFFFFF;
+    margin: 0 auto;
+    background-color: #FFFFFF;
 }
 
 h1 {
-    font-family: roboto;
-    color:blueviolet;
+    color:#FFFFFF;
+    font-size: 1.25em;
+    line-height: 2em;
 }
+
+h2 {
+    padding: 10px;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    font-size: 20px;
+    color:#590242;
+    line-height: 1em;
+}
+
+
+p, dl, dd {
+    color:#FFFFFF;
+    font-size: 1em;
+}
+
+footer p {
+    color:#590242;
+    font-size: .75em;
+}
+
+.header2 {
+    background-image: linear-gradient(to right, #0812ca, black);
+    color: white;
+    padding: 10px 20px;
+}
+
+.header2 p {
+    text-align: left;
+}
+
+
+/***NAVIGATION***/
+
+/* nav header contained within the width of the body, height specified below*/
+.header1 {
+    background-color: #020873;
+    height: 70px;
+}
+
+/* nav includes the menu button, li a targets list items with a link  */
+nav li, a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1em;
+    list-style-type: none;
+
+}
+
+/* Hint: On hover, background-color changes to #590242 */
+li a:hover {
+    background: #590242;
+}
+
+
+/* Styles MuzakMaker list item */
+#TopNavItem {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.25em;
+    position: absolute;
+    left: 40%;
+    top: 20px;
+}
+
+/* targets all list items except muzakmaker */
+.navitem {
+    text-transform: uppercase;
+}
+
+/* menu.txt file mobile first style */
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+
+/***LAYOUT***/
+
+
+/* playlist grid has 5 rows / each row will contain an item that holds img/txt */
+/* this grid is a containing element, and the elements of the grid are the children */
+     .playlists { 
+        display: grid; /* sets our container as a grid */
+        grid-template-columns: repeat(5, 200px); /*sets columns 200px high*/
+        background-color: #2699FB;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 10px;
+
+        
+    }
+
+
+    .curated { /*seperate grid from playlist*/
+        display: grid;
+        background-color: #030A8C;
+        grid-template-columns: repeat(5, 200px);
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 10px;
+    }
+
+
+    .playlists .item { /* items are child elements of the playlist and curated grids */
+        background-color: #028DFB; 
+        display: grid;
+        width: 200px;
+        height: 260px;
+        position: relative;
+        left: 10px;
+        
+    }
+
+    .curated .item {
+        background-color: #020873; 
+        display: grid;
+        width: 200px;
+        height: 260px;
+        position: relative;
+        left: 10px;
+        
+        
+    }
+     .item img {
+        position: relative;
+        left: 13%;
+    }
+
+    .item h3, p {
+        color:#FFFFFF;
+        text-align: center;
+    }
+
+
+
+
+/***TRENDING IMAGES/TEXT***/
+
+.title h3 {    /* song title */
+    margin: 0;
+}
+
+dl {   /* contains artist and name */
+    display: flex;
+    margin: 0;
+}
+
+dt {    /* "artist" */
+    margin: 0;
+    font-style: italic;
+    color:#590242;
+}
+
+dd {  /* artist name */
+    margin-left: 10px;
+    color:#590242;
+}
+
+
+/***BUTTONS***/
+
+.more { 
+    text-decoration: none;
+    background-color: #590242;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+    display: block;
+    text-align: center;
+    margin: 10px 0 30px 30px;
+}
+
+.more:hover {
+    background-color: #020659;
+}
+
+
+/***AUDIO***/
+
+audio {
+    position: absolute;
+    bottom: 150px;
+    left: 5px;
+}
+
+/* audio.txt file */
+audio::-webkit-media-controls-mute-button {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(255,255,255,.5);
+}
+
+
+/***SCROLL***/
+
+.scroll {  /* scroll class contain severything except heading and button / scroll class a grid that has 5 columns and no rows */
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); /* creates a section for each song, evenly spaced */
+    overflow-x: auto; /*height is auto to display full height */
+    overflow-y: hidden; /*hides song sections that don't fit in grid container */
+}
+
+.scroll section {
+    margin: 10px; /* white space between each song section */
+    position: relative; /* keeps container in place */
+}
+
+.scroll div{
+    position: absolute; /* holds all scroll items */
+    top: 251px; /* from the top, pushes down container 251px */
+    background-color: rgba(255,255,255,.75);    /*semi-transparent background shown on label of song*/
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+
+
+/* scroll.txt file */
+#trending ::-webkit-scrollbar {
+    width: 15px;
+}
+
+#trending ::-webkit-scrollbar-track { /* scroll bar track is the bar behind the slider*/
+    box-shadow: inset 0 0 15px #590242;
+}
+
+#trending ::-webkit-scrollbar-thumb { /* thumb = slider */
+    background: #590242;
+    border-radius: 5px;
+}
+
+#trending ::-webkit-scrollbar-thumb:hover {  /* slider turns blue on hover */
+    background: #020659;
+}
+
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 15px;
+}
+
+#playlists ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #020659;
+}
+
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background: #020659;
+    border-radius: 5px;
+}
+
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background: #FFFFFF;
+}
+
+
+/***MEDIA QUERY***/
+/* when viewport >= 834px, display css */
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 10%;
+        width: 80%;
+    }
+
+    #TopNavItem {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+      
+    label span, input {
+        display: none;
+    }
+
+
+    /* create 2 column container for playlists and curated sections */
+    .gridplaylistscurated {  
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+     .playlists { /* grid within grid container */
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 100px);       
+        overflow-x: hidden;
+        overflow-y: auto;
+        
+    }
+
+    .playlists .item { 
+        left: 20px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .curated { 
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 100px);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .curated .item {
+        left: 20px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+
+     .item img {
+
+     }
+    
+
+    .item h3, p {
+        
+    }
+
+
+    /* moves buttons responsively */
+    .more {
+        position: sticky;
+        left: 80%;
+    } 
